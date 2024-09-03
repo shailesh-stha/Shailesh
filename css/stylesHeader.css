@@ -1,0 +1,82 @@
+.logoMain {
+    max-height: 50px;
+    transform: scale(0.8);
+    transform-origin: center center;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+}
+
+.logoMain:hover {
+    transform: scale(1);
+    filter: brightness(60%);
+}
+
+.logoExternal {
+    max-height: 30px;
+    transform: scale(0.8);
+    transform-origin: center center;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+}
+
+.logoExternal:hover {
+    transform: scale(1);
+    filter: brightness(60%);
+}
+
+
+nav {
+    width: 80%;
+    position: relative;
+    top: 2.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li:first-child {
+    margin-right: auto;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    display: block;
+    width: min(auto, 90px);
+    height: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    /* background-color: rgba(100,100,100,0.5); */
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a.active,
+nav ul li a:active {
+    font-size: 1.15rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #858585;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
