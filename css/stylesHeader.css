@@ -4,6 +4,8 @@
     transform-origin: center center;
     transition: filter 0.3s ease, transform 0.3s ease;
     z-index: 1;
+    position: relative;
+    top: -10px;
 }
 
 .logoMain:hover {
@@ -12,18 +14,19 @@
 }
 
 .logoExternal {
-    max-height: 30px;
+    max-height: 25px;
     transform: scale(0.8);
     transform-origin: center center;
     transition: filter 0.3s ease, transform 0.3s ease;
     z-index: 1;
+    position: relative;
+    top: -2px;
 }
 
 .logoExternal:hover {
     transform: scale(1);
     filter: brightness(60%);
 }
-
 
 nav {
     width: 80%;
@@ -51,7 +54,7 @@ nav ul li:first-child {
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {

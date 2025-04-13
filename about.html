@@ -1,51 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Geoinformatics, CFD Simulation, Palm-4U, Python, JavaScript, Data Visualization, GIS">
+    <meta name="keywords"
+        content="Geoinformatics, CFD Simulation, Palm-4U, Python, JavaScript, Data Visualization, GIS">
     <meta name="author" content="Shailesh Shrestha">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Shailesh Shrestha</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
 
-    <link rel="stylesheet" href="./css/main.css">
+    <title>Shailesh</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo32.png">
+
+    <link rel="stylesheet" href="./css/stylesMain.css">
+    <link rel="stylesheet" href="./css/stylesHeader.css">
+    <link rel="stylesheet" href="./css/animatedBackground.css"> -->
 </head>
+
 <body>
-    <!-- <header>
-        <p>header</p>
-    </header> -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html"><img class="logoMain" src="./images/logo256-white.png" alt="ss-logo"></a>
+                </li>
+                <li><a href="./about.html">About Me</a></li>
+                <!-- <li><a href="./index.html">About Me</a></li> -->
 
-    <nav>
-        <ul><li><a href="./index.html">Home</a></li></ul>
-        <ul><li><a href="./about.html">About</a></li></ul>
-        <ul><li><a href="./services.html">Services</a></li></ul>
-        <ul><li><a href="./contact.html">Contact</a></li></ul>
-    </nav>
-    
-    <main class="mainBodyContent">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5">
-                    <p>5th</p>
-                </div>
-                <div class="col-sm-7">
-                    <p>7th</p>
-                </div>
+                <li>
+                    <a href="https://x.com/Shailes89522819" target="_blank">
+                        <img class="logoExternal" src="./images/x-logo-white.png" alt="x-logos">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/shailesh-stha" target="_blank">
+                        <img class="logoExternal" src="./images/github-logo-white.png" alt="in-logos">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/shailesh_stha/" target="_blank">
+                        <img class="logoExternal" src="./images/insta-logo-white.png" alt="insta-logos">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/shailesh-stha/" target="_blank">
+                        <img class="logoExternal" src="./images/in-logo-white.png" alt="github-logos">
+                    </a>
+                </li>
+                <!-- <li><img class="logoExternal" src="./images/youtube-logo-white.png" alt="youtube-logos"></li> -->
+            </ul>
+        </nav>
+    </header>
 
-            </div>
-        </div>
-    </main>
+    <div class="mainBodyContainer" id="mainContainer1">
+        <!-- Experience -->
+        <section id="experience" class="section glassFrameContainer">
+            <h2>Professional Experience</h2>
+            <article>
+                <h3>Geomatics Engineer, str.ucture GmbH (2022 - Present)</h3>
+                <ul>
+                    <li><b>Develop</b> documentation and Jupyter notebooks for CoKLIMAx project.</li>
+                    <li><b>Optimize</b> geospatial datasets and perform simulations with PALM-4U.</li>
+                    <li><b>Develop</b> Python-based tools to analysis and visualization automation.</li>
+                    <li><b>Design</b> Streamlit web apps for data visualization.</li>
+                    <li><b>Automate</b> environmental assessment processes (LCA & EPD).</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Working Student, LBA Luftbildauswertung GmbH (2022 - 2023)</h3>
+                <ul>
+                    <li><b>Assisted</b> in aerial data analysis and geospatial mapping.</li>
+                    <li><b>Processed</b> large datasets using GIS.</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Civil Engineer, Realpath Engineering Consultant (2017 - 2021)</h3>
+                <ul>
+                    <li><b>Surveyed and designed</b> airport infrastructure using Autodesk Civil 3D.</li>
+                    <li><b>Conducted</b> socio-economic GIS-based surveys.</li>
+                    <li><b>Developed</b> detailed 3D infrastructure visualizations and reports.</li>
+                </ul>
+            </article>
+        </section>
 
+          <!-- Projects -->
+        <section id="projects" class="section glassFrameContainer">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <strong>Sphinx Documentation</strong> Comprehensive technical documentation for accessing and managing climate and atmospheric data from the Copernicus Data Store (CDS) using Sphinx. Developed a custom workflow to enable multilingual (internationalized) website generation—an advanced feature not natively supported in official Sphinx documentation.
 
-    <footer>
-        <div class="portfolioFooter">
-            <p>End</p>
-        </div>
-    </footer>
+                    <a href="https://str-ucture.github.io/CoKLIMAx-II/de/index.html" target="_blank">CoKLIMAX-II (Docs)</a>
+                </li>
+
+                <li>
+                    <strong>Microclimate Simulation Workflows:</strong> Streamlined end-to-end workflows for data collection, preprocessing, and preparation for microclimate simulations using the PALM model system (PALM-4U). Additionally, developed post-processing pipelines to handle large NetCDF4 datasets generated from simulations, enabling the extraction of insightful metrics and automated generation of reports with relevant, simulation-specific outputs.
+                </li>
+
+                <li>
+                    <strong>Computational Design:</strong> Automated volume analysis and Life Cycle Assessment (LCA) calculations for various building typologies using Grasshopper. Developed parametric workflows to streamline early-stage design evaluations, enabling rapid sustainability insights and data-driven decision-making in architectural and urban design contexts.
+                </li>
+
+                <li>
+                    <strong>Automation Workflows:</strong> Built automation pipelines using n8n to extract structured information from PDF documents and project pages on the website, transforming them into polished, post-ready text for social media platforms like LinkedIn. URL: <a href="https://www.str-ucture.com" target="_blank">https://www.str-ucture.com</a>
+                </li>                  
+            </ul>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="section glassFrameContainer">
+            <h2>Education</h2>
+                <ul>
+                    <li><strong>M.Sc. Photogrammetry and Geoinformatics</strong>Stuttgart Technology University (2021-2023)</li>
+                    <li><strong>Bachelor's in Civil Engineering</strong>Tribhuvan University, Nepal (2012-2016)</li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section glassFrameContainer">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Programming:</strong> Python, SQL, Git, GitHub</li>
+                <li><strong>GIS Tools:</strong> ArcGIS, QGIS, GEE, FME Workbench, CloudCompare</li>
+                <li><strong>Data Visualization:</strong> Python, OpenLayers, Leaflet, PowerBI</li>
+                <li><strong>Web Development:</strong> HTML, CSS, JavaScript (Basics), Streamlit, Sphinx</li>
+                <li><strong>CAD/BIM:</strong> Autodesk Civil 3D, AutoCAD, Rhino with Grasshopper</li>
+            </ul>
+        </section>
+    </div>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
 
     <script src="./js/index.js"></script>
+    <script src="./js/globe.js" type="module"></script>
+    <script src="./js/openLayers.js"></script>
 </body>
+
 </html>

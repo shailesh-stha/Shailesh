@@ -6,7 +6,6 @@ const scene = new THREE.Scene();
 const width = globeContainer.clientWidth;
 const height = globeContainer.clientHeight;
 
-
 const camera = new THREE.PerspectiveCamera(75, width/height, 0.1, 1000);
 camera.position.z = 7;
 
