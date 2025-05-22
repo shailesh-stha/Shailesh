@@ -1,0 +1,36 @@
+# Gitignore file for Node.js projects
+# Ignore node_modules directory
+node_modules/
+
+# Ignore npm debug logs
+npm-debug.log*
+
+# Ignore yarn files
+yarn-error.log
+.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+!/.yarn/versions
+
+# Ignore build or dist directories
+build/
+dist/
+
+# Ignore environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore SQLite database file (local development database)
+backend/*.db
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore editor specific files
+.vscode/*
+!.vscode/settings.json
+.idea/

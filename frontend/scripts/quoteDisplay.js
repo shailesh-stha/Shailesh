@@ -1,15 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const activePage = window.location.pathname;
-  const navLinks = document.querySelectorAll("nav a");
-
-  navLinks.forEach((link) => {
-    const linkPath = new URL(link.href).pathname;
-    if (linkPath === activePage) {
-      link.classList.add("active");
-    }
-  });
-});
-
 const quotes = [
   '"Everything is related to everything else, but near things are more related than distant things." : Waldo Tobler',
   '"Geography is destiny." : Napoleon Bonaparte',
@@ -21,7 +9,6 @@ const quotes = [
   '"Without data, you’re just another person with an opinion." : W. Edwards Deming',
   '"Maps codify the miracle of existence." : Nicholas Crane',
 ];
-
 
 function showRandomQuote() {
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
