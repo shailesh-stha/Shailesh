@@ -158,3 +158,55 @@ footer {
 #quote {
   font-style: italic;
 }
+
+/* Project Cards */
+#showcase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#showcase .glassFrameContainer {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+}
+
+#showcase .glassFrameContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* CTA Button */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #626694;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #4c4c4c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #showcase .glassFrameContainer {
+        width: 100%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mainBodyContainer {
+        width: 95%;
+    }
+}
