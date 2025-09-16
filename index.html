@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Geoinformatics, CFD Simulation, Palm-4U, Python, JavaScript, Data Visualization, GIS">
     <meta name="author" content="Shailesh Shrestha">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.2.4/ol.css">
     
     <title>Shailesh Shrestha | Geomatics Engineer & Developer</title>
     <link rel="icon" type="image/x-icon" href="./assets/logo32.png">
@@ -29,7 +27,7 @@
 
     <header>
         <nav>
-            <a href="./index.html" class="nav-logo-link">
+            <a href="./index.html" class="nav-logo-link" aria-label="Homepage">
                 <img class="logo-main" src="./assets/logo.svg" alt="Shailesh Shrestha Logo">
             </a>
             
@@ -58,9 +56,10 @@
 
     <div class="nav-overlay-mobile" id="nav-links-mobile">
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#showcase">Projects</a></li>
             <li class="nav-social-links">
                 <a href="https://github.com/shailesh-stha" target="_blank" aria-label="GitHub Profile">
                     <img class="logo-external" src="./assets/github-logo-white.png" alt="GitHub Logo">
@@ -73,17 +72,17 @@
     </div>
 
     <main class="mainBodyContainer" id="mainContainer1">
-        <section class="intro section glassFrameContainer">
-            <h1 class="fade-in-up">Shailesh Shrestha</h1>
-            <p class="fade-in-up professional-title">Geomatics Engineer | AI Enthusiast | Civil Engineer</p>
-            <p class="fade-in-up summary-text">
+        <section class="intro section glassFrameContainer fade-in-up">
+            <h1>Shailesh Shrestha</h1>
+            <p class="professional-title">Geomatics Engineer | AI Enthusiast | Civil Engineer</p>
+            <p class="summary-text">
                 A multidisciplinary professional pivoting into the AI space, focusing on modern information systems and intelligent data workflows. Experienced in geospatial analysis and microclimate modeling, now deepening expertise in Generative AI, RAG, and knowledge graphs to build scalable, context-aware solutions.
             </p>
         </section>
 
-        <section id="skills" class="section glassFrameContainer">
-            <h2 class="fade-in-up">Skills & Technologies</h2>
-            <div class="skills-grid fade-in-up">
+        <section id="skills" class="section glassFrameContainer fade-in-up">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Programming</h3>
                     <ul>
@@ -119,7 +118,6 @@
                         <li>HTML & CSS</li>
                         <li>JavaScript (Basics)</li>
                         <li>Streamlit</li>
-                        <li>OpenLayers</li>
                         <li>Plotly</li>
                         <li>PowerBI</li>
                     </ul>
@@ -143,9 +141,9 @@
             </div>
         </section>
 
-        <section id="experience" class="section glassFrameContainer">
-            <h2 class="fade-in-up">Professional Experience</h2>
-            <div class="experience-timeline fade-in-up">
+        <section id="experience" class="section glassFrameContainer fade-in-up">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
                 <article class="experience-item">
                     <h3>Geomatics Engineer</h3>
                     <p class="experience-details">str.ucture GmbH, Stuttgart | 11/2022 - Present</p>
@@ -176,57 +174,58 @@
             </div>
         </section>
 
-        <section id="showcase" class="section glassFrameContainer">
-            <h2 class="fade-in-up">Featured Projects</h2>
-            <div class="showcase-grid">
-                <article class="glassFrameContainer fade-in-up">
-                    <h3>Interactive n8n Workflow</h3>
-                    <div class="project-embed">
-                        <iframe
-                            src="https://n8n.example.com/workflow/1/embed"
-                            style="width: 100%; height: 100%; border: none;"
-                            title="Embedded n8n Workflow"
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                    <p>This interactive workflow demonstrates an automated data processing pipeline. Try it out!</p>
-                    <a href="#" class="button">View on GitHub</a>
-                </article>
+        <div class="under-construction-wrapper">
+            <section id="showcase" class="section glassFrameContainer fade-in-up">
+                <h2>Featured Projects</h2>
+                <div class="showcase-grid">
+                    <article class="glassFrameContainer project-card">
+                        <h3>Interactive n8n Workflow</h3>
+                        <div class="project-embed">
+                            <iframe
+                                src="https://n8n.example.com/workflow/1/embed"
+                                title="Embedded n8n Workflow"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <p>This interactive workflow demonstrates an automated data processing pipeline. Try it out!</p>
+                        <a href="#" class="button">View on GitHub</a>
+                    </article>
 
-                <article class="glassFrameContainer fade-in-up">
-                    <h3>Python Data Visualization</h3>
-                    <div class="project-embed">
-                        <video 
-                            src="./assets/project-video.mp4" 
-                            controls 
-                            muted
-                            loop
-                            playsinline
-                            title="Demonstration of a Python visualization script">
-                        </video>
-                    </div>
-                    <p>A short video demonstrating a Python script that generates 3D geospatial visualizations.</p>
-                    <a href="#" class="button">Read More</a>
-                </article>
-                
-                <article class="glassFrameContainer fade-in-up">
-                    <h3>Project Three</h3>
-                    <img src="./assets/bbox-extractor.png" alt="A representative image for project three" class="basicImg" loading="lazy">
-                    <p>A short description of the third project.</p>
-                    <a href="#" class="button">Read More</a>
-                </article>
-            </div>
-        </section>
+                    <article class="glassFrameContainer project-card">
+                        <h3>Python Data Visualization</h3>
+                        <div class="project-embed">
+                            <video 
+                                src="./assets/project-video.mp4" 
+                                controls 
+                                muted
+                                loop
+                                playsinline
+                                title="Demonstration of a Python visualization script">
+                            </video>
+                        </div>
+                        <p>A short video demonstrating a Python script that generates 3D geospatial visualizations.</p>
+                        <a href="#" class="button">Read More</a>
+                    </article>
+                    
+                    <article class="glassFrameContainer project-card">
+                        <h3>Project Three</h3>
+                        <img src="./assets/bbox-extractor.png" alt="A representative image for project three" class="basicImg" loading="lazy">
+                        <p>A short description of the third project.</p>
+                        <a href="#" class="button">Read More</a>
+                    </article>
+                </div>
+            </section>
+            <div class="under-construction-overlay">Under Construction</div>
+        </div>
     </main>
     
-    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">↑</a>
+    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top" role="button">↑</a>
 
     <footer>
         <p>&copy; 2025 Shailesh Shrestha</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.4/dist/ol.js"></script>
     <script src="./index.js" defer></script>
 
 </body>

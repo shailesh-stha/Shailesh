@@ -1,6 +1,10 @@
 (function() {
   'use strict';
 
+  /**
+   * Utility function to limit how often a function can run.
+   * Useful for performance on scroll/resize events.
+   */
   function throttle(func, limit) {
     let inThrottle;
     return function() {
@@ -15,27 +19,7 @@
   }
 
   /**
-   * ===================================================================
-   * HEADER SCROLL EFFECT (No longer needed)
-   * ===================================================================
-   */
-  function initHeaderScrollEffect() {
-    const header = document.querySelector('header');
-    if (!header) return;
-
-    window.addEventListener('scroll', throttle(() => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }, 100));
-  }
-
-  /**
-   * ===================================================================
-   * MOBILE NAVIGATION TOGGLE (Updated for Unified Nav)
-   * ===================================================================
+   * Toggles the mobile navigation overlay.
    */
   function initMobileNav() {
     const hamburgerBtn = document.getElementById('hamburger-button');
@@ -43,12 +27,13 @@
     
     if (!hamburgerBtn || !mobileNav) return;
 
+    // Toggle nav on hamburger click
     hamburgerBtn.addEventListener('click', () => {
-      const isOpened = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-      document.body.classList.toggle('nav-open');
-      hamburgerBtn.setAttribute('aria-expanded', !isOpened);
+      const isOpened = document.body.classList.toggle('nav-open');
+      hamburgerBtn.setAttribute('aria-expanded', isOpened);
     });
 
+    // Close nav when a link inside it is clicked
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         if (document.body.classList.contains('nav-open')) {
@@ -60,9 +45,7 @@
   }
 
   /**
-   * ===================================================================
-   * DARK MODE THEME SWITCHER (MODIFIED FOR DARK DEFAULT)
-   * ===================================================================
+   * Handles the light/dark theme switcher and persists the choice.
    */
   function initThemeSwitcher() {
     const switcher = document.getElementById('theme-switcher');
@@ -71,12 +54,14 @@
     const docBody = document.body;
     const savedTheme = localStorage.getItem('theme');
 
+    // Default to dark theme if nothing is saved or if dark was saved
     if (savedTheme !== 'light') {
       docBody.setAttribute('data-theme', 'dark');
     }
 
     switcher.addEventListener('click', () => {
-      if (docBody.getAttribute('data-theme') === 'dark') {
+      const isDark = docBody.getAttribute('data-theme') === 'dark';
+      if (isDark) {
         docBody.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
       } else {
@@ -86,10 +71,14 @@
     });
   }
 
-
+  /**
+   * Shows/hides the "back to top" button based on scroll position.
+   */
   function initBackToTopButton() {
     const button = document.getElementById('back-to-top');
     if (!button) return;
+
+    // Toggle visibility on scroll
     window.addEventListener('scroll', throttle(() => {
       if (window.scrollY > 300) {
         button.classList.add('visible');
@@ -97,23 +86,40 @@
         button.classList.remove('visible');
       }
     }, 200));
+
+    // UPDATED: Handle click with smooth scroll and prevent hash in URL
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
   }
 
+  /**
+   * Animates elements into view as the user scrolls.
+   */
   function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.fade-in-up');
     if (animatedElements.length === 0) return;
+
+    // Use IntersectionObserver for performance
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // Stop observing after animation
         }
       });
     }, { threshold: 0.1 });
+
     animatedElements.forEach(el => observer.observe(el));
   }
-
-  // ... (Your existing functions: getStarfield, initGlobe, etc. remain the same)
+  
+  /**
+   * Creates a starfield background using THREE.js.
+   */
   function getStarfield({ numStars = 2500 } = {}) {
     function randomSpherePoint() {
       const radius = Math.random() * 25 + 25; const u = Math.random(); const v = Math.random();
@@ -137,8 +143,22 @@
     });
     return new THREE.Points(geo, mat);
   }
+
+  /**
+   * Initializes the THREE.js globe visualization.
+   */
   function initGlobe() {
-    const globeContainer = document.getElementById('globe-container'); if (!globeContainer) return;
+    // ADDED: Safety check to ensure THREE.js is loaded
+    if (typeof THREE === 'undefined') {
+        console.error("THREE.js is not loaded. Cannot initialize globe.");
+        return;
+    }
+    
+    // There is no #globe-container in the HTML. This code won't run.
+    // Leaving it in case you add the container later.
+    const globeContainer = document.getElementById('globe-container'); 
+    if (!globeContainer) return;
+
     const scene = new THREE.Scene(); const width = globeContainer.clientWidth; const height = globeContainer.clientHeight;
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000); camera.position.z = 7;
     const renderer = new THREE.WebGLRenderer({ antialias: true }); renderer.setSize(width, height); renderer.setClearColor(0x000000, 0);
@@ -166,49 +186,16 @@
         renderer.setSize(updatedWidth, updatedHeight); camera.aspect = updatedWidth / updatedHeight; camera.updateProjectionMatrix();
     });
   }
-  function initNavHighlighter() {
-    const activePage = window.location.pathname;
-    const navLinks = document.querySelectorAll(".nav-links a");
-    navLinks.forEach((link) => {
-      const linkPath = new URL(link.href).pathname;
-      if (activePage === '/' && (linkPath === '/index.html' || linkPath === '/')) {
-        if(link.closest('li')) link.closest('li').classList.add("active");
-      } else if (linkPath === activePage && linkPath !== '/') {
-        if(link.closest('li')) link.closest('li').classList.add("active");
-      }
-    });
-  }
-  function initQuoteDisplay() {
-    const quoteElement = document.getElementById("quote"); if (!quoteElement) return;
-    const quotes = ['"Everything is related to everything else, but near things are more related than distant things." : Waldo Tobler', '"Geography is destiny." : Napoleon Bonaparte', '"The map is not the territory." : Alfred Korzybski', '"GIS is the only technology that actually integrates many different subjects using geography as its common framework." : Jack Dangermond', '"Knowing where things are, and why, is essential to rational decision making." : Jack Dangermond', '"Without data, you’re just another person with an opinion." : W. Edwards Deming', '"Maps codify the miracle of existence." : Nicholas Crane'];
-    const quote = quotes[Math.floor(Math.random() * quotes.length)]; quoteElement.innerText = quote;
-  }
-  function initOpenLayersMap() {
-    const mapElement = document.getElementById("map"); if (!mapElement) return;
-    const map = new ol.Map({
-        target: "map", layers: [ new ol.layer.Tile({ source: new ol.source.OSM() }) ],
-        view: new ol.View({ center: ol.proj.fromLonLat([9.1829, 48.7758]), zoom: 12 }),
-    });
-  }
-
 
   /**
-   * ===================================================================
-   * MAIN APPLICATION STARTER
-   * ===================================================================
+   * Main application starter.
    */
   document.addEventListener("DOMContentLoaded", function() {
-    // MODIFIED: Commented out the scroll effect initialization
-    // initHeaderScrollEffect(); 
-    
     initMobileNav();
     initThemeSwitcher();
     initBackToTopButton();
     initScrollAnimations();
-    initNavHighlighter();
-    initQuoteDisplay();
-    initGlobe();
-    initOpenLayersMap();
+    initGlobe(); // This function looks for a #globe-container element
   });
 
 })();
