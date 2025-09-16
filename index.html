@@ -178,27 +178,42 @@
 
         <section id="showcase" class="section glassFrameContainer">
             <h2 class="fade-in-up">Featured Projects</h2>
-            <div class="development-overlay">
-                <p>Under Development</p>
-            </div>
-            <div class="showcase-grid disabled-content">
+            <div class="showcase-grid">
                 <article class="glassFrameContainer fade-in-up">
-                    <h3>Project One</h3>
-                    <img src="./assets/bbox-extractor.png" alt="Screenshot of the B-Box Extractor project" class="basicImg" loading="lazy">
-                    <p>A short description of the first project.</p>
-                    <a href="./projects/project-one.html" class="button">Read More</a>
+                    <h3>Interactive n8n Workflow</h3>
+                    <div class="project-embed">
+                        <iframe
+                            src="https://n8n.example.com/workflow/1/embed"
+                            style="width: 100%; height: 100%; border: none;"
+                            title="Embedded n8n Workflow"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <p>This interactive workflow demonstrates an automated data processing pipeline. Try it out!</p>
+                    <a href="#" class="button">View on GitHub</a>
                 </article>
+
                 <article class="glassFrameContainer fade-in-up">
-                    <h3>Project Two</h3>
-                    <img src="./assets/bbox-extractor.png" alt="A representative image for project two" class="basicImg" loading="lazy">
-                    <p>A short description of the second project.</p>
-                    <a href="./projects/project-two.html" class="button">Read More</a>
+                    <h3>Python Data Visualization</h3>
+                    <div class="project-embed">
+                        <video 
+                            src="./assets/project-video.mp4" 
+                            controls 
+                            muted
+                            loop
+                            playsinline
+                            title="Demonstration of a Python visualization script">
+                        </video>
+                    </div>
+                    <p>A short video demonstrating a Python script that generates 3D geospatial visualizations.</p>
+                    <a href="#" class="button">Read More</a>
                 </article>
+                
                 <article class="glassFrameContainer fade-in-up">
                     <h3>Project Three</h3>
                     <img src="./assets/bbox-extractor.png" alt="A representative image for project three" class="basicImg" loading="lazy">
                     <p>A short description of the third project.</p>
-                    <a href="./projects/project-three.html" class="button">Read More</a>
+                    <a href="#" class="button">Read More</a>
                 </article>
             </div>
         </section>
