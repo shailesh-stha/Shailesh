@@ -33,33 +33,44 @@
                 <img class="logo-main" src="./assets/logo.svg" alt="Shailesh Shrestha Logo">
             </a>
             
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-social-links">
-                        <a href="https://github.com/shailesh-stha" target="_blank" aria-label="GitHub Profile">
-                            <img class="logo-external" src="./assets/github-logo-white.png" alt="GitHub Logo">
-                        </a>
-                        <a href="https://www.linkedin.com/in/shailesh-stha/" target="_blank" aria-label="LinkedIn Profile">
-                            <img class="logo-external" src="./assets/in-logo-white.png" alt="LinkedIn Logo">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="nav-actions">
+            <div class="nav-desktop-controls">
+                <div class="nav-social-links">
+                    <a href="https://github.com/shailesh-stha" target="_blank" aria-label="GitHub Profile">
+                        <img class="logo-external" src="./assets/github-logo-white.png" alt="GitHub Logo">
+                    </a>
+                    <a href="https://www.linkedin.com/in/shailesh-stha/" target="_blank" aria-label="LinkedIn Profile">
+                        <img class="logo-external" src="./assets/in-logo-white.png" alt="LinkedIn Logo">
+                    </a>
+                </div>
                 <button class="theme-switcher" id="theme-switcher" aria-label="Toggle dark mode">
                     <span class="icon-sun"></span>
                     <span class="icon-moon"></span>
                 </button>
-                
-                <button class="nav-hamburger" id="hamburger-button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
+            
+            <button class="nav-hamburger" id="hamburger-button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links-mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
+
+    <div class="nav-overlay-mobile" id="nav-links-mobile">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li class="nav-social-links">
+                <a href="https://github.com/shailesh-stha" target="_blank" aria-label="GitHub Profile">
+                    <img class="logo-external" src="./assets/github-logo-white.png" alt="GitHub Logo">
+                </a>
+                <a href="https://www.linkedin.com/in/shailesh-stha/" target="_blank" aria-label="LinkedIn Profile">
+                    <img class="logo-external" src="./assets/in-logo-white.png" alt="LinkedIn Logo">
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <main class="mainBodyContainer" id="mainContainer1">
         <section class="intro section glassFrameContainer">

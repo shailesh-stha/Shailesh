@@ -63,7 +63,7 @@ body, html {
 body.nav-open { overflow: hidden; }
 
 /* =================================================================== */
-/* HEADER & NAVIGATION                                                 */
+/* HEADER & NAVIGATION (MODIFIED FOR ALIGNMENT)                        */
 /* =================================================================== */
 header {
   width: 100%;
@@ -71,15 +71,13 @@ header {
   top: 0;
   height: 80px;
   z-index: 1000;
-  background-color: transparent;
   transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease, backdrop-filter var(--transition-speed) ease;
-}
-header.scrolled {
   background-color: var(--header-bg);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: var(--card-blur);
   -webkit-backdrop-filter: var(--card-blur);
 }
+
 nav {
   max-width: var(--container-width);
   height: 100%;
@@ -92,46 +90,66 @@ nav {
 .logo-main {
     max-height: 50px;
     transition: transform var(--transition-speed) ease;
-    /* The color will be inherited from the parent's text color */
     color: var(--color-text);
+    display: block;
 }
 .nav-logo-link:hover .logo-main { transform: scale(1.1); }
-
-/* MODIFIED: The filter is now only applied to the external social media logos */
 .logo-external { filter: var(--logo-filter); }
 
-.nav-menu {}
-.nav-links { list-style-type: none; display: flex; align-items: center; gap: 25px; }
-.nav-links a {
-  color: var(--color-text); text-decoration: none; font-weight: 600;
-  padding: 5px; position: relative; transition: color var(--transition-speed) ease;
+/* NEW: This is the container for social links and theme switcher on desktop */
+.nav-desktop-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
-.nav-links a::after {
-  content: ''; position: absolute; width: 0; height: 2px;
-  bottom: -5px; left: 50%; background-color: var(--color-primary);
-  transition: all var(--transition-speed) ease-out;
+.nav-social-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Consistent gap */
 }
-.nav-links a:hover, .nav-links li.active a { color: var(--color-primary); }
-.nav-links a:hover::after, .nav-links li.active a::after { width: 100%; left: 0; }
-.logo-external { max-height: 24px; vertical-align: middle; transition: transform var(--transition-speed) ease; }
-.logo-external:hover { transform: scale(1.15); }
-.nav-actions { display: flex; align-items: center; gap: 1rem; }
+.nav-social-links a,
+.theme-switcher {
+    display: inline-flex;
+    align-items: center;
+}
+.logo-external { 
+    max-height: 24px; 
+    transition: transform var(--transition-speed) ease;
+}
+.logo-external:hover {
+    transform: scale(1.15);
+}
 
-@media (max-width: 768px) {
-  .nav-menu {
+.nav-overlay-mobile {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
     background-color: var(--background-main); z-index: 999;
     display: flex; justify-content: center; align-items: center;
     opacity: 0; visibility: hidden;
     transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
-  }
-  .nav-links { flex-direction: column; }
-  .nav-links a { font-size: 2rem; }
-  .nav-social-links { margin-top: 1rem; display: flex; gap: 2rem; }
-  body.nav-open .nav-menu { opacity: 1; visibility: visible; }
 }
-.nav-hamburger { display: none; background: transparent; border: none; cursor: pointer; z-index: 1001; padding: 10px; }
-@media (max-width: 768px) { .nav-hamburger { display: block; } }
+.nav-overlay-mobile ul {
+  list-style: none;
+  text-align: center;
+}
+.nav-overlay-mobile a {
+  font-size: 2rem;
+  color: var(--color-text);
+  text-decoration: none;
+  display: block;
+  padding: 1rem;
+}
+.nav-overlay-mobile .nav-social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+body.nav-open .nav-overlay-mobile { opacity: 1; visibility: visible; }
+
+.nav-hamburger {
+    display: none; /* Hidden by default */
+    background: transparent; border: none; cursor: pointer; z-index: 1001; padding: 10px;
+}
 .nav-hamburger span {
   display: block; width: 25px; height: 3px; background-color: var(--color-text);
   margin: 5px 0; transition: all var(--transition-speed) ease;
@@ -139,6 +157,17 @@ nav {
 body.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 body.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
 body.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Responsive controls */
+@media (max-width: 768px) {
+  .nav-desktop-controls {
+    display: none; /* Hide desktop controls on mobile */
+  }
+  .nav-hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+}
+
 .theme-switcher { background: none; border: none; cursor: pointer; width: 24px; height: 24px; padding: 0; position: relative; }
 .theme-switcher .icon-sun, .theme-switcher .icon-moon {
   position: absolute; width: 100%; height: 100%;
@@ -158,7 +187,6 @@ body[data-theme='dark'] .icon-moon {
   opacity: 1; transform: scale(1) rotate(0deg);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e9ecef' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/%3E%3C/svg%3E");
 }
-
 /* =================================================================== */
 /* MAIN CONTENT & LAYOUT                                               */
 /* =================================================================== */
@@ -263,7 +291,6 @@ body[data-theme='dark'] .skill-category li {
 .experience-item ul li {
     margin-bottom: 0.5rem;
 }
-
 
 /* =================================================================== */
 /* CARDS & CONTAINERS                                                  */

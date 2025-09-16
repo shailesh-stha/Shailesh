@@ -14,9 +14,15 @@
     };
   }
 
+  /**
+   * ===================================================================
+   * HEADER SCROLL EFFECT (No longer needed)
+   * ===================================================================
+   */
   function initHeaderScrollEffect() {
     const header = document.querySelector('header');
     if (!header) return;
+
     window.addEventListener('scroll', throttle(() => {
       if (window.scrollY > 50) {
         header.classList.add('scrolled');
@@ -26,16 +32,24 @@
     }, 100));
   }
 
+  /**
+   * ===================================================================
+   * MOBILE NAVIGATION TOGGLE (Updated for Unified Nav)
+   * ===================================================================
+   */
   function initMobileNav() {
     const hamburgerBtn = document.getElementById('hamburger-button');
-    const navMenu = document.getElementById('nav-menu');
-    if (!hamburgerBtn || !navMenu) return;
+    const mobileNav = document.getElementById('nav-links-mobile');
+    
+    if (!hamburgerBtn || !mobileNav) return;
+
     hamburgerBtn.addEventListener('click', () => {
       const isOpened = hamburgerBtn.getAttribute('aria-expanded') === 'true';
       document.body.classList.toggle('nav-open');
       hamburgerBtn.setAttribute('aria-expanded', !isOpened);
     });
-    navMenu.querySelectorAll('a').forEach(link => {
+
+    mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         if (document.body.classList.contains('nav-open')) {
           document.body.classList.remove('nav-open');
@@ -57,13 +71,11 @@
     const docBody = document.body;
     const savedTheme = localStorage.getItem('theme');
 
-    // MODIFIED: Default to dark mode unless the user has explicitly chosen light mode.
     if (savedTheme !== 'light') {
       docBody.setAttribute('data-theme', 'dark');
     }
 
     switcher.addEventListener('click', () => {
-      // MODIFIED: Toggle logic now explicitly saves 'light' or 'dark'.
       if (docBody.getAttribute('data-theme') === 'dark') {
         docBody.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
@@ -179,8 +191,16 @@
     });
   }
 
+
+  /**
+   * ===================================================================
+   * MAIN APPLICATION STARTER
+   * ===================================================================
+   */
   document.addEventListener("DOMContentLoaded", function() {
-    initHeaderScrollEffect();
+    // MODIFIED: Commented out the scroll effect initialization
+    // initHeaderScrollEffect(); 
+    
     initMobileNav();
     initThemeSwitcher();
     initBackToTopButton();
