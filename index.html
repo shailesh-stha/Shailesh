@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Geoinformatics, CFD Simulation, Palm-4U, Python, JavaScript, Data Visualization, GIS">
+    <meta name="description" content="Portfolio of Shailesh Shrestha, a Geomatics Engineer specializing in Generative AI, RAG systems, and knowledge graphs for building intelligent, context-aware data solutions.">
+    <meta name="keywords" content="Geoinformatics, CFD Simulation, Palm-4U, Python, JavaScript, Data Visualization, GIS, Generative AI, RAG">
     <meta name="author" content="Shailesh Shrestha">
     
     <title>Shailesh Shrestha | Geomatics Engineer & Developer</title>
@@ -21,23 +22,50 @@
 </head>
 
 <body>
-    <ul class="circles">
-        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-    </ul>
+    <nav class="dot-nav" aria-label="Page section navigation">
+        <ul>
+            <li data-section="intro">
+                <a href="#intro" aria-label="Go to Intro section"></a>
+                <span class="dot-label">Intro</span>
+            </li>
+            <li data-section="skills">
+                <a href="#skills" aria-label="Go to Skills section"></a>
+                <span class="dot-label">Skills</span>
+            </li>
+            <li data-section="experience">
+                <a href="#experience" aria-label="Go to Experience section"></a>
+                <span class="dot-label">Experience</span>
+            </li>
+            <li data-section="certifications">
+                <a href="#certifications" aria-label="Go to Certifications section"></a>
+                <span class="dot-label">Certs</span>
+            </li>
+            <li data-section="showcase">
+                <a href="#showcase" aria-label="Go to Projects section"></a>
+                <span class="dot-label">Projects</span>
+            </li>
+             <li data-section="blog">
+                <a href="#blog" aria-label="Go to Blog section"></a>
+                <span class="dot-label">Blog</span>
+            </li>
+        </ul>
+    </nav>
 
     <header>
         <nav>
             <a href="./index.html" class="nav-logo-link" aria-label="Homepage">
-                <img class="logo-main" src="./assets/logo.svg" alt="Shailesh Shrestha Logo">
+                <img class="logo-main" src="./assets/logo.svg" alt="Shailesh Shrestha's personal portfolio logo">
             </a>
             
             <div class="nav-desktop-controls">
                 <div class="nav-social-links">
-                    <a href="https://github.com/shailesh-stha" target="_blank" aria-label="GitHub Profile">
-                        <img class="logo-external" src="./assets/github-logo-white.png" alt="GitHub Logo">
+                    <a href="https://github.com/shailesh-stha" target="_blank" rel="noopener noreferrer">
+                        <img class="logo-external" src="./assets/github-logo-white.png" alt="GitHub Profile">
+                        <span class="visually-hidden">GitHub Profile</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/shailesh-stha/" target="_blank" aria-label="LinkedIn Profile">
-                        <img class="logo-external" src="./assets/in-logo-white.png" alt="LinkedIn Logo">
+                    <a href="https://www.linkedin.com/in/shailesh-stha/" target="_blank" rel="noopener noreferrer">
+                        <img class="logo-external" src="./assets/in-logo-white.png" alt="LinkedIn Profile">
+                        <span class="visually-hidden">LinkedIn Profile</span>
                     </a>
                 </div>
                 <button class="theme-switcher" id="theme-switcher" aria-label="Toggle dark mode">
@@ -60,27 +88,44 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#showcase">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#footer">Contact</a></li>
             <li class="nav-social-links">
-                <a href="https://github.com/shailesh-stha" target="_blank" aria-label="GitHub Profile">
-                    <img class="logo-external" src="./assets/github-logo-white.png" alt="GitHub Logo">
+                <a href="https://github.com/shailesh-stha" target="_blank" rel="noopener noreferrer">
+                    <img class="logo-external" src="./assets/github-logo-white.png" alt="GitHub Profile">
+                    <span class="visually-hidden">GitHub Profile</span>
                 </a>
-                <a href="https://www.linkedin.com/in/shailesh-stha/" target="_blank" aria-label="LinkedIn Profile">
-                    <img class="logo-external" src="./assets/in-logo-white.png" alt="LinkedIn Logo">
+                <a href="https://www.linkedin.com/in/shailesh-stha/" target="_blank" rel="noopener noreferrer">
+                    <img class="logo-external" src="./assets/in-logo-white.png" alt="LinkedIn Profile">
+                    <span class="visually-hidden">LinkedIn Profile</span>
                 </a>
             </li>
         </ul>
     </div>
 
     <main class="mainBodyContainer" id="mainContainer1">
-        <section class="intro section glassFrameContainer fade-in-up">
-            <h1>Shailesh Shrestha</h1>
-            <p class="professional-title">Geomatics Engineer | AI Enthusiast | Civil Engineer</p>
-            <p class="summary-text">
-                A multidisciplinary professional pivoting into the AI space, focusing on modern information systems and intelligent data workflows. Experienced in geospatial analysis and microclimate modeling, now deepening expertise in Generative AI, RAG, and knowledge graphs to build scalable, context-aware solutions.
+        <section id="intro" class="intro section glassFrameContainer">
+            <h1 id="main-heading">Shailesh Shrestha</h1>
+            <p class="professional-title">
+              <button type="button" class="title-part" data-trigger="geomatics">Geomatics Engineer</button> | 
+              <button type="button" class="title-part" data-trigger="ai">AI Enthusiast</button> | 
+              <button type="button" class="title-part" data-trigger="civil">Civil Engineer</button>
             </p>
+
+            <div class="summary-text-container">
+                <p class="summary-text active" data-text="ai">
+                    A multidisciplinary professional pivoting into the AI space, focusing on modern information systems and intelligent data workflows. Experienced in geospatial analysis and microclimate modeling, now deepening expertise in Generative AI, RAG, and knowledge graphs to build scalable, context-aware solutions.
+                </p>
+                <p class="summary-text" data-text="geomatics">
+                    With a foundation in Geomatics, I specialize in transforming raw geospatial data from sources like satellite imagery and LiDAR into actionable intelligence. My work involves creating precise digital models of the physical world, enabling advanced spatial analysis, environmental monitoring, and urban planning using tools like ArcGIS and QGIS.
+                </p>
+                <p class="summary-text" data-text="civil">
+                    My background as a Civil Engineer provides a deep understanding of infrastructure design, project management, and structural analysis. I have hands-on experience in developing 3D models for urban planning and conducting surveys for large-scale airport projects, always focusing on practical, robust, and sustainable solutions for the built environment.
+                </p>
+            </div>
         </section>
 
-        <section id="skills" class="section glassFrameContainer fade-in-up">
+        <section id="skills" class="section glassFrameContainer">
             <h2>Skills & Technologies</h2>
             <div class="skills-grid">
                 <div class="skill-category">
@@ -141,7 +186,7 @@
             </div>
         </section>
 
-        <section id="experience" class="section glassFrameContainer fade-in-up">
+        <section id="experience" class="section glassFrameContainer">
             <h2>Professional Experience</h2>
             <div class="experience-timeline">
                 <article class="experience-item">
@@ -174,56 +219,142 @@
             </div>
         </section>
 
-        <div class="under-construction-wrapper">
-            <section id="showcase" class="section glassFrameContainer fade-in-up">
-                <h2>Featured Projects</h2>
-                <div class="showcase-grid">
-                    <article class="glassFrameContainer project-card">
-                        <h3>Interactive n8n Workflow</h3>
-                        <div class="project-embed">
-                            <iframe
-                                src="https://n8n.example.com/workflow/1/embed"
-                                title="Embedded n8n Workflow"
-                                loading="lazy">
-                            </iframe>
-                        </div>
-                        <p>This interactive workflow demonstrates an automated data processing pipeline. Try it out!</p>
-                        <a href="#" class="button">View on GitHub</a>
-                    </article>
+        <section id="certifications" class="section glassFrameContainer">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <article class="certification-card" data-verify-url="https://graphacademy.neo4j.com/c/7e0ded5d-1494-40bb-bcc7-eaa71e51e415/" tabindex="0" role="button" aria-label="View Neo4j Certified Professional credential">
+                    <img src="./assets/neo4j-llm.webp" alt="Neo4j Certified Professional badge" class="cert-logo">
+                    <div class="cert-details">
+                        <h3>Neo4j Certified Professional</h3>
+                        <p class="cert-issuer">Issued by: Neo4j GraphAcademy</p>
+                    </div>
+                </article>
+                <article class="certification-card" data-verify-url="https://graphacademy.neo4j.com/c/5b9502b9-acc0-4ec4-b1bb-54bf516ca68e/" tabindex="0" role="button" aria-label="View Neo4j Graph Data Science Certification credential">
+                    <img src="./assets/neo4j-gds.webp" alt="Neo4j Graph Data Science certification badge" class="cert-logo">
+                    <div class="cert-details">
+                        <h3>Neo4j Graph Data Science Certification</h3>
+                        <p class="cert-issuer">Issued by: Neo4j GraphAcademy</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-                    <article class="glassFrameContainer project-card">
-                        <h3>Python Data Visualization</h3>
-                        <div class="project-embed">
-                            <video 
-                                src="./assets/project-video.mp4" 
-                                controls 
-                                muted
-                                loop
-                                playsinline
-                                title="Demonstration of a Python visualization script">
-                            </video>
-                        </div>
-                        <p>A short video demonstrating a Python script that generates 3D geospatial visualizations.</p>
+        <section id="showcase" 
+                 class="section glassFrameContainer is-under-construction" 
+                 data-overlay-text="Projects Coming Soon">
+            <h2>Featured Projects</h2>
+            <div class="showcase-grid">
+                <article class="glassFrameContainer project-card">
+                    <h3>Interactive n8n Workflow</h3>
+                    <div class="project-embed">
+                        <iframe
+                            src="https://n8n.example.com/workflow/1/embed"
+                            title="Embedded n8n Workflow"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <p>This interactive workflow demonstrates an automated data processing pipeline. Try it out!</p>
+                    <a href="#" class="button">View on GitHub</a>
+                </article>
+
+                <article class="glassFrameContainer project-card">
+                    <h3>Python Data Visualization</h3>
+                    <div class="project-embed">
+                        <video 
+                            src="./assets/project-video.mp4" 
+                            controls 
+                            muted
+                            loop
+                            playsinline
+                            poster="./assets/project-video-poster.jpg"
+                            title="Demonstration of a Python visualization script">
+                        </video>
+                    </div>
+                    <p>A short video demonstrating a Python script that generates 3D geospatial visualizations.</p>
+                    <a href="#" class="button">Read More</a>
+                </article>
+                
+                <article class="glassFrameContainer project-card">
+                    <h3>Project Three</h3>
+                    <img src="./assets/bbox-extractor.png" alt="Screenshot of the Bounding Box Extractor project interface" class="basicImg" loading="lazy">
+                    <p>A short description of the third project.</p>
+                    <a href="#" class="button">Read More</a>
+                </article>
+
+                <article class="glassFrameContainer project-card project-card--coming-soon">
+                    <h3>More Projects</h3>
+                    <p>Exciting new projects involving AI and geospatial analysis are currently in development. Check back soon!</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="blog" 
+                 class="section glassFrameContainer is-under-construction" 
+                 data-overlay-text="Blog Coming Soon">
+            <h2>From the Blog</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="./assets/blog1.jpg" alt="Abstract image representing AI concepts" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <h3>Applying RAG to Geospatial Vector Data</h3>
+                        <p>A deep dive into combining Retrieval-Augmented Generation with vector databases to ask natural language questions of geographic data.</p>
                         <a href="#" class="button">Read More</a>
-                    </article>
-                    
-                    <article class="glassFrameContainer project-card">
-                        <h3>Project Three</h3>
-                        <img src="./assets/bbox-extractor.png" alt="A representative image for project three" class="basicImg" loading="lazy">
-                        <p>A short description of the third project.</p>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="./assets/blog2.jpg" alt="Image of a city with data overlays" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <h3>From AutoCAD to Knowledge Graph</h3>
+                        <p>Exploring the pipeline for transforming traditional CAD drawings and BIM models into an interconnected knowledge graph for smarter queries.</p>
                         <a href="#" class="button">Read More</a>
-                    </article>
-                </div>
-            </section>
-            <div class="under-construction-overlay">Under Construction</div>
-        </div>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="./assets/blog3.jpg" alt="Stylized image of a brain with connected nodes" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <h3>My Journey: Civil Engineering to AI</h3>
+                        <p>A personal reflection on pivoting careers and how foundational engineering principles apply to the world of artificial intelligence.</p>
+                        <a href="#" class="button">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
     
-    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top" role="button">↑</a>
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
 
-    <footer>
-        <p>&copy; 2025 Shailesh Shrestha</p>
+    <footer id="footer" class="section">
+        <div class="footer-content">
+            <h2>Get In Touch</h2>
+            <p>
+                My interests lie at the intersection of geospatial data and artificial intelligence. 
+                If you believe my skills could be of value to your team or project, I would love to connect.
+            </p>
+            <button type="button" class="button" id="copy-email-btn" data-email="shailesh.shrestha049@gmail.com">
+                Copy Email Address
+            </button>
+        </div>
+        <p class="copyright">&copy; 2025 Shailesh Shrestha</p>
     </footer>
+
+    <div class="modal-overlay" id="cert-modal-overlay">
+        <div class="modal-content glassFrameContainer">
+            <button class="modal-close" id="cert-modal-close" aria-label="Close modal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <div class="modal-body">
+                <img src="" alt="Certificate Logo" id="modal-cert-img" class="cert-logo">
+                <div class="modal-details">
+                    <h3 id="modal-cert-title"></h3>
+                    <p id="modal-cert-issuer"></p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="button" id="modal-verify-btn">Verify Certificate</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="./index.js" defer></script>
