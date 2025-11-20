@@ -185,9 +185,30 @@ body[data-theme='dark'] .dot-nav li.active a {
 }
 .section { padding: var(--spacing-lg); }
 .section h2 { font-size: 2.5rem; margin-bottom: var(--spacing-lg); text-align: center; color: var(--color-primary); }
-#intro { 
-  text-align: center; padding-top: 5rem; padding-bottom: 5rem;
+#intro {
+  position: relative;
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   transition: all var(--transition-speed) ease;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-content {
+    position: relative;
+    padding: var(--spacing-lg);
+}
+
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 #intro h1 { 
   font-size: 3rem; margin-bottom: 0.5rem; cursor: pointer;
