@@ -17,6 +17,7 @@
       const SCROLL_DISTANCE = 400;
 
       window.addEventListener('wheel', (event) => {
+          if (event.ctrlKey || event.metaKey) return; // don't block browser zoom
           event.preventDefault();
           const scrollAmount = event.deltaY > 0 ? SCROLL_DISTANCE : -SCROLL_DISTANCE;
           window.scrollBy({
@@ -192,6 +193,12 @@
     window.addEventListener('scroll', throttle(updateHeader, 100));
   }
   
+  function initCopyrightYear() {
+    const yearEl = document.getElementById('copyright-year');
+    if (!yearEl) return;
+    yearEl.textContent = new Date().getFullYear();
+  }
+
   function initCopyEmail() {
     const copyBtn = document.getElementById('copy-email-btn');
     if (!copyBtn) return;
@@ -281,6 +288,7 @@
     initNavHighlightOnScroll();
     initAutoHideHeader();
     initCopyEmail();
+    initCopyrightYear();
   });
 
 })();

@@ -274,18 +274,7 @@ body[data-theme='dark'] .skill-category li.skill-fading { animation-name: fade-o
 .project-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: var(--spacing-lg); }
 .project-card .basicImg { width: 100%; height: auto; border-radius: 8px; margin-bottom: var(--spacing-md); }
 .project-card p { flex-grow: 1; margin-bottom: var(--spacing-lg); }
-.project-card--coming-soon {
-    justify-content: center; align-items: center; border-style: dashed;
-    border-width: 2px; opacity: 0.8;
-}
-.project-card--coming-soon h3 { font-size: 1.5rem; color: var(--color-text-muted); }
-.project-card--coming-soon p { flex-grow: 0; color: var(--color-text-muted); }
-.project-embed {
-    width: 100%; aspect-ratio: 16 / 9; margin-bottom: var(--spacing-md);
-    border-radius: 8px; overflow: hidden; background-color: #000;
-}
-.project-embed iframe,
-.project-embed video { width: 100%; height: 100%; border: none; object-fit: cover; }
+.project-card .project-stack { flex-grow: 0; color: var(--color-text-muted); font-size: 0.9rem; margin-top: -0.5rem; margin-bottom: 1rem; }
 .button {
     display: inline-block; padding: 10px 20px; background-color: var(--color-primary);
     color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600;
